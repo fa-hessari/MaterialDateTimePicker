@@ -116,10 +116,10 @@ Puede configurar la versión de diseño usando la fábrica
 dpd.setVersion(DatePickerDialog.Version.VERSION_2);
 ```
 
-Los selectores serán temáticos de forma automática en función del tema actual en el que se crean, en función del `ColorAccent` <tt>Acentuar color</tt> actual. También puede tema los cuadros de diálogo a través del método `setAccentColor(int color)`. Alternativamente, puedes darle un tema a los selectores sobrescribiendo los recursos de color `mdtp_accent_color` y `mdtp_accent_color_dark` en el proyecto.
+Los selectores serán temáticos de forma automática en función del tema actual en el que se crean, en función del `ColorAccent` <tt>Acentuar color</tt> actual. También puede tema los cuadros de diálogo a través del método `setAccentColor(int color)`. Alternativamente, puedes darle un tema a los selectores sobrescribiendo los recursos de color `fh_gig_mdtp_accent_color` y `fh_gig_mdtp_accent_color_dark` en el proyecto.
 ```xml
-<color name="mdtp_accent_color">#009688</color>
-<color name="mdtp_accent_color_dark">#00796b</color>
+<color name="fh_gig_mdtp_accent_color">#009688</color>
+<color name="fh_gig_mdtp_accent_color_dark">#00796b</color>
 ```
 
 El orden exacto en que se seleccionan los colores es el siguiente:
@@ -127,11 +127,11 @@ El orden exacto en que se seleccionan los colores es el siguiente:
 1. `setAccentColor(int color)` en código java
 2. `android.R.attr.colorAccent` (si es Android 5.0+)
 3. `R.attr.colorAccent` (p.ej. cuando se usa AppCompat)
-4. `R.color.mdtp_accent_color` y `R.color.mdtp_accent_color_dark` si ninguno de los otros está configurado en su proyecto
+4. `R.color.fh_gig_mdtp_accent_color` y `R.color.fh_gig_mdtp_accent_color_dark` si ninguno de los otros está configurado en su proyecto
 
-Los selectores también tienen un tema oscuro. Esto se puede especificar de forma global utilizando el atributo `mdtp_theme_dark` <tt>tema oscuro</tt> en su tema o las funciones `setThemeDark(boolean themeDark)` <tt>establecer el tema oscuro</tt>. La función llama a sobrescribir la configuración XML.
+Los selectores también tienen un tema oscuro. Esto se puede especificar de forma global utilizando el atributo `fh_gig_mdtp_theme_dark` <tt>tema oscuro</tt> en su tema o las funciones `setThemeDark(boolean themeDark)` <tt>establecer el tema oscuro</tt>. La función llama a sobrescribir la configuración XML.
 ```xml
-<item name="mdtp_theme_dark">true</item>
+<item name="fh_gig_mdtp_theme_dark">true</item>
 ```
 
 
@@ -189,7 +189,7 @@ You can pass a `Calendar[]` to the `DatePickerDialog`. The values in this list a
 Los valores en este `Calendario []` están explícitamente deshabilitados (no seleccionables). Esta opción se puede usar junto con `setSelectableDays(Calendar [] days)`: en caso de que haya un conflicto `setDisabledDays(Calendar [] days)` tendrá prioridad sobre `setSelectableDays(Calendar [] days)`
 
 ### [DatePickerDialog] `setHighlightedDays(Calendar[] days)`  
-Puede pasar un `Calendario []` de días para resaltar. Se presentarán en negrita. Puede modificar el color de los días resaltados sobrescribiendo `mdtp_date_picker_text_highlighted`
+Puede pasar un `Calendario []` de días para resaltar. Se presentarán en negrita. Puede modificar el color de los días resaltados sobrescribiendo `fh_gig_mdtp_date_picker_text_highlighted`
 
 ### [DatePickerDialog] `showYearPickerFirst(boolean yearPicker)`  
 Muestre primero el selector de año, en lugar del selector de mes y día.
