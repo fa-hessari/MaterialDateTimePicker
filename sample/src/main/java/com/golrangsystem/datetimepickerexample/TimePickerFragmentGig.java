@@ -18,7 +18,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TimePickerFragment extends Fragment implements TimePickerDialogGIg.OnTimeSetListener {
+public class TimePickerFragmentGig extends Fragment implements TimePickerDialogGIg.OnTimeSetListener {
 
     private TextView timeTextView;
     private CheckBox mode24Hours;
@@ -33,14 +33,14 @@ public class TimePickerFragment extends Fragment implements TimePickerDialogGIg.
     private CheckBox showVersion2;
   private TimePickerDialogGIg tpd;
 
-    public TimePickerFragment() {
+    public TimePickerFragmentGig() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.timepicker_layout, container, false);
+        View view = inflater.inflate(R.layout.fh_gig_timepicker_layout, container, false);
 
         // Find our View instances
         timeTextView = view.findViewById(R.id.time_textview);
@@ -77,14 +77,14 @@ public class TimePickerFragment extends Fragment implements TimePickerDialogGIg.
              */
             if (tpd == null) {
               tpd = TimePickerDialogGIg.newInstance(
-                        TimePickerFragment.this,
+                        TimePickerFragmentGig.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
                         mode24Hours.isChecked()
                 );
             } else {
                 tpd.initialize(
-                        TimePickerFragment.this,
+                        TimePickerFragmentGig.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
                         now.get(Calendar.SECOND),

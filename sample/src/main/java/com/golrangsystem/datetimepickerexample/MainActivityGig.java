@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivityGig extends AppCompatActivity
 {
     ViewPager viewPager;
     PickerAdapter adapter;
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fh_gig_activity_main);
 
         adapter = new PickerAdapter(getSupportFragmentManager());
         viewPager = findViewById(R.id.pager);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
 
         PickerAdapter(FragmentManager fm) {
             super(fm);
-            timePickerFragment = new TimePickerFragment();
+            timePickerFragment = new TimePickerFragmentGig();
           datePickerFragment = new DatePickerFragmentGig();
         }
 
