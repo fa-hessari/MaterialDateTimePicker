@@ -54,7 +54,7 @@
       android:background="@android:color/transparent"
       android:clipChildren="false"
       >
-    <com.golrangsystem.materialdatetimepicker.AccessibleTextView
+    <com.golrangsystem.materialdatetimepicker.AccessibleTextViewGig
         android:id="@+id/fh_gig_mdtp_hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
       android:layout_marginRight="@dimen/fh_gig_mdtp_extra_time_label_margin"
       android:background="@android:color/transparent"
       >
-    <com.golrangsystem.materialdatetimepicker.AccessibleTextView
+    <com.golrangsystem.materialdatetimepicker.AccessibleTextViewGig
         android:id="@+id/fh_gig_mdtp_minutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
       android:layout_marginRight="@dimen/fh_gig_mdtp_extra_time_label_margin"
       android:background="@android:color/transparent"
       >
-    <com.golrangsystem.materialdatetimepicker.AccessibleTextView
+    <com.golrangsystem.materialdatetimepicker.AccessibleTextViewGig
         android:id="@+id/fh_gig_mdtp_seconds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

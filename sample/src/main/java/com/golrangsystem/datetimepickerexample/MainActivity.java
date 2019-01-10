@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
         PickerAdapter(FragmentManager fm) {
             super(fm);
             timePickerFragment = new TimePickerFragment();
-            datePickerFragment = new DatePickerFragment();
+          datePickerFragment = new DatePickerFragmentGig();
         }
 
         @Override

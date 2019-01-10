@@ -82,7 +82,7 @@ public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int se
 }
 
 @Override
-public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+public void onDateSetGig(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
   String date = "You picked the following date: "+dayOfMonth+"/"+(monthOfYear+1)+"/"+year;
   dateTextView.setText(date);
 }

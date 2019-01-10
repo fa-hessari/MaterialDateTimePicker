@@ -14,7 +14,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License
   -->
-<com.golrangsystem.materialdatetimepicker.VerticalTextView
+<com.golrangsystem.materialdatetimepicker.VerticalTextViewGig
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fh_gig_mdtp_time_picker_header"
     android:layout_width="@dimen/fh_gig_mdtp_date_picker_title_height"
