@@ -1194,7 +1194,7 @@ public class DatePickerDialog extends DialogFragment
     void onDateChanged();
   }
 
-  protected interface OnChangeToShamsiClickListener {
+  public interface OnChangeToShamsiClickListener {
     void onChangeToShamsiClicked(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth);
   }
 }
