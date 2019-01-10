@@ -3,7 +3,7 @@ package com.golrangsystem.materialdatetimepicker.time;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TimePickerDialogTest {
+public class TimePickerDialogGigTest {
     @Test
     public void getPickerResolutionShouldReturnSecondIfSecondsAreEnabled() {
       TimePickerDialogGig tpd = TimePickerDialogGig.newInstance(null, false);
