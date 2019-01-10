@@ -22,7 +22,7 @@
     android:focusable="true"
     android:orientation="horizontal"
     >
-  <com.wdullaer.materialdatetimepicker.time.RadialPickerLayout
+  <com.farhadhessari.materialdatetimepicker.time.RadialPickerLayout
       android:id="@+id/fh_gig_mdtp_time_picker"
       android:layout_width="@dimen/fh_gig_mdtp_picker_dimen"
       android:layout_height="@dimen/fh_gig_mdtp_time_picker_height"
