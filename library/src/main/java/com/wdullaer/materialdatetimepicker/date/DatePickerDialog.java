@@ -107,7 +107,6 @@ public class DatePickerDialog extends DialogFragment
   private DayPickerGroup mDayPickerView;
   private YearPickerView mYearPickerView;
   private int mCurrentView = UNINITIALIZED;
-  private int mWeekStart = mCalendar.getFirstDayOfWeek();
   private String mTitle;
   private HashSet<Calendar> highlightedDays = new HashSet<>();
   private boolean mThemeDark = false;
@@ -117,16 +116,17 @@ public class DatePickerDialog extends DialogFragment
   private boolean mDismissOnPause = false;
   private boolean mAutoDismiss = false;
   private int mDefaultView = MONTH_AND_DAY_VIEW;
-  private int mOkResid = R.string.fh_gig_mdtp_ok;
+  private int mOkResId = R.string.fh_gig_mdtp_ok;
   private String mOkString;
   private int mOkColor = -1;
-  private int mCancelResid = R.string.fh_gig_mdtp_cancel;
+  private int mCancelResId = R.string.fh_gig_mdtp_cancel;
   private String mCancelString;
   private int mCancelColor = -1;
   private Version mVersion;
   private ScrollOrientation mScrollOrientation;
   private TimeZone mTimezone;
   private Calendar mCalendar = Utils.trimToMidnight(Calendar.getInstance(getTimeZone()));
+  private int mWeekStart = mCalendar.getFirstDayOfWeek();
   private Locale mLocale = Locale.getDefault();
   private DefaultDateRangeLimiter mDefaultLimiter = new DefaultDateRangeLimiter();
   private DateRangeLimiter mDateRangeLimiter = mDefaultLimiter;
@@ -137,6 +137,12 @@ public class DatePickerDialog extends DialogFragment
   private String mSelectDay;
   private String mYearPickerDescription;
   private String mSelectYear;
+  private boolean hasShamsiButton = false;
+  private OnChangeToShamsiClickListener onChangeToShamsiClickListener;
+  private int mChangeToShamsiColor = -1;
+  private String mChangeToShamsiString;
+  private int mChangeToShamsiResId = R.string.fh_gig_mdtp_change_to_shamsi;
+
   public DatePickerDialog() {
     // Empty constructor required for dialog fragment.
   }
@@ -204,6 +210,17 @@ public class DatePickerDialog extends DialogFragment
     this.initialize(callBack, cal);
   }
 
+  public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth,
+      boolean hasShamsiButton, OnChangeToShamsiClickListener onChangeToShamsiClickListener) {
+    Calendar cal = Calendar.getInstance(getTimeZone());
+    cal.set(Calendar.YEAR, year);
+    cal.set(Calendar.MONTH, monthOfYear);
+    cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+    this.hasShamsiButton = hasShamsiButton;
+    this.onChangeToShamsiClickListener = onChangeToShamsiClickListener;
+    this.initialize(callBack, cal);
+  }
+
   @Override public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     final Activity activity = requireActivity();
@@ -250,10 +267,10 @@ public class DatePickerDialog extends DialogFragment
     outState.putBoolean(KEY_AUTO_DISMISS, mAutoDismiss);
     outState.putInt(KEY_DEFAULT_VIEW, mDefaultView);
     outState.putString(KEY_TITLE, mTitle);
-    outState.putInt(KEY_OK_RESID, mOkResid);
+    outState.putInt(KEY_OK_RESID, mOkResId);
     outState.putString(KEY_OK_STRING, mOkString);
     outState.putInt(KEY_OK_COLOR, mOkColor);
-    outState.putInt(KEY_CANCEL_RESID, mCancelResid);
+    outState.putInt(KEY_CANCEL_RESID, mCancelResId);
     outState.putString(KEY_CANCEL_STRING, mCancelString);
     outState.putInt(KEY_CANCEL_COLOR, mCancelColor);
     outState.putSerializable(KEY_VERSION, mVersion);
@@ -287,10 +304,10 @@ public class DatePickerDialog extends DialogFragment
       mDismissOnPause = savedInstanceState.getBoolean(KEY_DISMISS);
       mAutoDismiss = savedInstanceState.getBoolean(KEY_AUTO_DISMISS);
       mTitle = savedInstanceState.getString(KEY_TITLE);
-      mOkResid = savedInstanceState.getInt(KEY_OK_RESID);
+      mOkResId = savedInstanceState.getInt(KEY_OK_RESID);
       mOkString = savedInstanceState.getString(KEY_OK_STRING);
       mOkColor = savedInstanceState.getInt(KEY_OK_COLOR);
-      mCancelResid = savedInstanceState.getInt(KEY_CANCEL_RESID);
+      mCancelResId = savedInstanceState.getInt(KEY_CANCEL_RESID);
       mCancelString = savedInstanceState.getString(KEY_CANCEL_STRING);
       mCancelColor = savedInstanceState.getInt(KEY_CANCEL_COLOR);
       mVersion = (Version) savedInstanceState.getSerializable(KEY_VERSION);
@@ -379,7 +396,7 @@ public class DatePickerDialog extends DialogFragment
     if (mOkString != null) {
       okButton.setText(mOkString);
     } else {
-      okButton.setText(mOkResid);
+      okButton.setText(mOkResId);
     }
 
     Button cancelButton = view.findViewById(R.id.fh_gig_mdtp_cancel);
@@ -391,7 +408,7 @@ public class DatePickerDialog extends DialogFragment
     if (mCancelString != null) {
       cancelButton.setText(mCancelString);
     } else {
-      cancelButton.setText(mCancelResid);
+      cancelButton.setText(mCancelResId);
     }
     cancelButton.setVisibility(isCancelable() ? View.VISIBLE : View.GONE);
 
@@ -429,6 +446,29 @@ public class DatePickerDialog extends DialogFragment
         mDayPickerView.postSetSelection(listPosition);
       } else if (currentView == YEAR_VIEW) {
         mYearPickerView.postSetSelectionFromTop(listPosition, listPositionOffset);
+      }
+    }
+
+    if (hasShamsiButton) {
+      Button changeToShamsiBt = view.findViewById(R.id.fh_gig_mdtp_change_to_shamsi);
+      changeToShamsiBt.setVisibility(View.VISIBLE);
+      if (mChangeToShamsiColor != -1) {
+        changeToShamsiBt.setTextColor(mChangeToShamsiColor);
+      } else {
+        changeToShamsiBt.setTextColor(mAccentColor);
+      }
+      if (mChangeToShamsiString != null) {
+        changeToShamsiBt.setText(mChangeToShamsiString);
+      } else {
+        changeToShamsiBt.setText(mChangeToShamsiResId);
+      }
+      if (onChangeToShamsiClickListener != null) {
+        changeToShamsiBt.setOnClickListener(v -> {
+          onChangeToShamsiClickListener.onChangeToShamsiClicked(DatePickerDialog.this,
+              mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH),
+              mCalendar.get(Calendar.DAY_OF_MONTH));
+          this.dismiss();
+        });
       }
     }
 
@@ -672,6 +712,24 @@ public class DatePickerDialog extends DialogFragment
   }
 
   /**
+   * Set the text color of the ChangeToShamsi button
+   *
+   * @param color the color you want
+   */
+  @SuppressWarnings("unused") public void setChangeToShamsiColor(String color) {
+    mChangeToShamsiColor = Color.parseColor(color);
+  }
+
+  /**
+   * Set the text color of the ChangeToShamsi button
+   *
+   * @param color the color you want
+   */
+  @SuppressWarnings("unused") public void setChangeToShamsiColor(@ColorInt int color) {
+    mChangeToShamsiColor = Color.argb(255, Color.red(color), Color.green(color), Color.blue(color));
+  }
+
+  /**
    * Get the accent color of this dialog
    *
    * @return accent color
@@ -854,7 +912,7 @@ public class DatePickerDialog extends DialogFragment
    */
   @SuppressWarnings("unused") public void setOkText(@StringRes int okResid) {
     mOkString = null;
-    mOkResid = okResid;
+    mOkResId = okResid;
   }
 
   /**
@@ -873,7 +931,27 @@ public class DatePickerDialog extends DialogFragment
    */
   @SuppressWarnings("unused") public void setCancelText(@StringRes int cancelResid) {
     mCancelString = null;
-    mCancelResid = cancelResid;
+    mCancelResId = cancelResid;
+  }
+
+  /**
+   * Set the label for the ChangeToShamsi button (max 12 characters)
+   *
+   * @param changeToShamsiString A literal String to be used as the ChangeToShamsi button label
+   */
+  @SuppressWarnings("unused") public void setChangeToShamsiText(String changeToShamsiString) {
+    mChangeToShamsiString = changeToShamsiString;
+  }
+
+  /**
+   * Set the label for the ChangeToShamsi button (max 12 characters)
+   *
+   * @param changeToShamsiResId A resource ID to be used as the ChangeToShamsi button label
+   */
+  @SuppressWarnings("unused") public void setChangeToShamsiText(
+      @StringRes int changeToShamsiResId) {
+    mChangeToShamsiString = null;
+    mChangeToShamsiResId = changeToShamsiResId;
   }
 
   /**
@@ -1082,6 +1160,11 @@ public class DatePickerDialog extends DialogFragment
     }
   }
 
+  public void setOnChangeToShamsiClickListener(
+      OnChangeToShamsiClickListener onChangeToShamsiClickListener) {
+    this.onChangeToShamsiClickListener = onChangeToShamsiClickListener;
+  }
+
   public enum Version {
     VERSION_1, VERSION_2
   }
@@ -1109,5 +1192,9 @@ public class DatePickerDialog extends DialogFragment
    */
   @SuppressWarnings("WeakerAccess") protected interface OnDateChangedListener {
     void onDateChanged();
+  }
+
+  protected interface OnChangeToShamsiClickListener {
+    void onChangeToShamsiClicked(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth);
   }
 }
