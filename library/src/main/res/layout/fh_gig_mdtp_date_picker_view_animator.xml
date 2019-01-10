@@ -17,7 +17,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     >
-  <com.farhadhessari.materialdatetimepicker.date.AccessibleDateAnimator
+  <com.golrangsystem.materialdatetimepicker.date.AccessibleDateAnimator
       xmlns:android="http://schemas.android.com/apk/res/android"
       android:id="@+id/fh_gig_mdtp_animator"
       android:layout_width="@dimen/fh_gig_mdtp_date_picker_component_width"

@@ -24,7 +24,7 @@
     android:gravity="center"
     android:orientation="vertical"
     >
-  <com.farhadhessari.materialdatetimepicker.AccessibleLinearLayout
+  <com.golrangsystem.materialdatetimepicker.AccessibleLinearLayout
       android:id="@+id/fh_gig_mdtp_date_picker_month_and_day"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -62,8 +62,8 @@
         android:textSize="@dimen/fh_gig_mdtp_selected_date_day_size"
         tools:text="15"
         />
-  </com.farhadhessari.materialdatetimepicker.AccessibleLinearLayout>
-  <com.farhadhessari.materialdatetimepicker.AccessibleTextView
+  </com.golrangsystem.materialdatetimepicker.AccessibleLinearLayout>
+  <com.golrangsystem.materialdatetimepicker.AccessibleTextView
       android:id="@+id/fh_gig_mdtp_date_picker_year"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

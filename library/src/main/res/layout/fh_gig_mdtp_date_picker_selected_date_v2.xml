@@ -25,7 +25,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     >
-  <com.farhadhessari.materialdatetimepicker.AccessibleTextView
+  <com.golrangsystem.materialdatetimepicker.AccessibleTextView
       android:id="@+id/fh_gig_mdtp_date_picker_year"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
       android:textSize="@dimen/fh_gig_mdtp_datepicker_year_selection_text_size"
       tools:text="2015"
       />
-  <com.farhadhessari.materialdatetimepicker.AccessibleLinearLayout
+  <com.golrangsystem.materialdatetimepicker.AccessibleLinearLayout
       android:id="@+id/fh_gig_mdtp_date_picker_month_and_day"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -61,5 +61,5 @@
         android:textSize="@dimen/fh_gig_mdtp_datepicker_selection_text_size"
         tools:text="Fri, May 15"
         />
-  </com.farhadhessari.materialdatetimepicker.AccessibleLinearLayout>
+  </com.golrangsystem.materialdatetimepicker.AccessibleLinearLayout>
 </LinearLayout>
