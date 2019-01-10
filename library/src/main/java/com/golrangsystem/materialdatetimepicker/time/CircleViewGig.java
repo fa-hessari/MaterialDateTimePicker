@@ -46,7 +46,7 @@ public class CircleViewGig extends View {
     mIsInitialized = false;
   }
 
-  public void initialize(Context context, TimePickerControllerGIg controller) {
+  public void initialize(Context context, TimePickerControllerGig controller) {
     if (mIsInitialized) {
       Log.e(TAG, "CircleViewGig may only be initialized once.");
       return;
@@ -62,7 +62,7 @@ public class CircleViewGig extends View {
     mPaint.setAntiAlias(true);
 
     mIs24HourMode = controller.is24HourMode();
-    if (mIs24HourMode || controller.getVersion() != TimePickerDialogGIg.Version.VERSION_1) {
+    if (mIs24HourMode || controller.getVersion() != TimePickerDialogGig.Version.VERSION_1) {
       mCircleRadiusMultiplier = Float.parseFloat(res.getString(
           com.golrangsystem.materialdatetimepicker.R.string.fh_gig_mdtp_circle_radius_multiplier_24HourMode));
     } else {

@@ -36,8 +36,8 @@ public class AmPmCirclesViewGig extends View {
   // Alpha level for selected circle.
   private static final int SELECTED_ALPHA = UtilsGig.SELECTED_ALPHA;
   private static final int SELECTED_ALPHA_THEME_DARK = UtilsGig.SELECTED_ALPHA_THEME_DARK;
-  private static final int AM = TimePickerDialogGIg.AM;
-  private static final int PM = TimePickerDialogGIg.PM;
+  private static final int AM = TimePickerDialogGig.AM;
+  private static final int PM = TimePickerDialogGig.PM;
   private final Paint mPaint = new Paint();
   private int mSelectedAlpha;
   private int mTouchedColor;
@@ -66,7 +66,7 @@ public class AmPmCirclesViewGig extends View {
     mIsInitialized = false;
   }
 
-  public void initialize(Context context, Locale locale, TimePickerControllerGIg controller,
+  public void initialize(Context context, Locale locale, TimePickerControllerGig controller,
       int amOrPm) {
     if (mIsInitialized) {
       Log.e(TAG, "AmPmCirclesViewGig may only be initialized once.");

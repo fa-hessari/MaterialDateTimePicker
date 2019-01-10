@@ -56,14 +56,14 @@ import java.util.Locale;
 /**
  * Dialog to set a time.
  */
-public class TimePickerDialogGIg extends DialogFragment
-    implements RadialPickerLayoutGig.OnValueSelectedListener, TimePickerControllerGIg {
+public class TimePickerDialogGig extends DialogFragment
+    implements RadialPickerLayoutGig.OnValueSelectedListener, TimePickerControllerGig {
   public static final int HOUR_INDEX = 0;
   public static final int MINUTE_INDEX = 1;
   public static final int SECOND_INDEX = 2;
   public static final int AM = 0;
   public static final int PM = 1;
-  private static final String TAG = "TimePickerDialogGIg";
+  private static final String TAG = "TimePickerDialogGig";
   private static final String KEY_INITIAL_TIME = "initial_time";
   private static final String KEY_IS_24_HOUR_VIEW = "is_24_hour_view";
   private static final String KEY_TITLE = "dialog_title";
@@ -126,7 +126,7 @@ public class TimePickerDialogGIg extends DialogFragment
   private String mCancelString;
   private int mCancelColor;
   private Version mVersion;
-  private DefaultTimePointLimiterGigGig mDefaultLimiter = new DefaultTimePointLimiterGigGig();
+  private DefaultTimePointLimiterGig mDefaultLimiter = new DefaultTimePointLimiterGig();
   private TimePointLimiterGig mLimiter = mDefaultLimiter;
   private Locale mLocale = Locale.getDefault();
   // For hardware IME input.
@@ -146,54 +146,54 @@ public class TimePickerDialogGIg extends DialogFragment
   private String mSecondPickerDescription;
   private String mSelectSeconds;
 
-  public TimePickerDialogGIg() {
+  public TimePickerDialogGig() {
     // Empty constructor required for dialog fragment.
   }
 
   /**
-   * Create a new TimePickerDialogGIg instance with a given intial selection
+   * Create a new TimePickerDialogGig instance with a given intial selection
    *
    * @param callback How the parent is notified that the time is set.
    * @param hourOfDay The initial hour of the dialog.
    * @param minute The initial minute of the dialog.
    * @param second The initial second of the dialog.
    * @param is24HourMode True to render 24 hour mode, false to render AM / PM selectors.
-   * @return a new TimePickerDialogGIg instance.
+   * @return a new TimePickerDialogGig instance.
    */
-  @SuppressWarnings("SameParameterValue") public static TimePickerDialogGIg newInstance(
+  @SuppressWarnings("SameParameterValue") public static TimePickerDialogGig newInstance(
       OnTimeSetListener callback, int hourOfDay, int minute, int second, boolean is24HourMode) {
-    TimePickerDialogGIg ret = new TimePickerDialogGIg();
+    TimePickerDialogGig ret = new TimePickerDialogGig();
     ret.initialize(callback, hourOfDay, minute, second, is24HourMode);
     return ret;
   }
 
   /**
-   * Create a new TimePickerDialogGIg instance with a given initial selection
+   * Create a new TimePickerDialogGig instance with a given initial selection
    *
    * @param callback How the parent is notified that the time is set.
    * @param hourOfDay The initial hour of the dialog.
    * @param minute The initial minute of the dialog.
    * @param is24HourMode True to render 24 hour mode, false to render AM / PM selectors.
-   * @return a new TimePickerDialogGIg instance.
+   * @return a new TimePickerDialogGig instance.
    */
-  public static TimePickerDialogGIg newInstance(OnTimeSetListener callback, int hourOfDay,
+  public static TimePickerDialogGig newInstance(OnTimeSetListener callback, int hourOfDay,
       int minute,
       boolean is24HourMode) {
-    return TimePickerDialogGIg.newInstance(callback, hourOfDay, minute, 0, is24HourMode);
+    return TimePickerDialogGig.newInstance(callback, hourOfDay, minute, 0, is24HourMode);
   }
 
   /**
-   * Create a new TimePickerDialogGIg instance initialized to the current system time
+   * Create a new TimePickerDialogGig instance initialized to the current system time
    *
    * @param callback How the parent is notified that the time is set.
    * @param is24HourMode True to render 24 hour mode, false to render AM / PM selectors.
-   * @return a new TimePickerDialogGIg instance.
+   * @return a new TimePickerDialogGig instance.
    */
   @SuppressWarnings({ "unused", "SameParameterValue" })
-  public static TimePickerDialogGIg newInstance(
+  public static TimePickerDialogGig newInstance(
       OnTimeSetListener callback, boolean is24HourMode) {
     Calendar now = Calendar.getInstance();
-    return TimePickerDialogGIg.newInstance(callback, now.get(Calendar.HOUR_OF_DAY),
+    return TimePickerDialogGig.newInstance(callback, now.get(Calendar.HOUR_OF_DAY),
         now.get(Calendar.MINUTE), is24HourMode);
   }
 
@@ -404,7 +404,7 @@ public class TimePickerDialogGIg extends DialogFragment
 
   /**
    * Pass in an array of Timepoints that cannot be selected. These take precedence over
-   * {@link TimePickerDialogGIg#setSelectableTimes(TimePointGig[])}
+   * {@link TimePickerDialogGig#setSelectableTimes(TimePointGig[])}
    * Be careful when using this without selectableTimes: rounding to a valid TimePointGig is a
    * very expensive operation if a lot of consecutive Timepoints are disabled
    * Try to specify Timepoints only up to the resolution of your picker (i.e. do not add seconds
@@ -417,8 +417,8 @@ public class TimePickerDialogGIg extends DialogFragment
   }
 
   /**
-   * Set the interval for selectable times in the TimePickerDialogGIg
-   * This is a convenience wrapper around {@link TimePickerDialogGIg#setSelectableTimes(TimePointGig[])}
+   * Set the interval for selectable times in the TimePickerDialogGig
+   * This is a convenience wrapper around {@link TimePickerDialogGig#setSelectableTimes(TimePointGig[])}
    * The interval for all three time components can be set independently
    * If you are not using the seconds / minutes picker, set the respective item to 60 for
    * better performance.
@@ -449,7 +449,7 @@ public class TimePickerDialogGIg extends DialogFragment
   }
 
   /**
-   * Set the interval for selectable times in the TimePickerDialogGIg
+   * Set the interval for selectable times in the TimePickerDialogGig
    * This is a convenience wrapper around setSelectableTimes
    * The interval for all three time components can be set independently
    * If you are not using the seconds / minutes picker, set the respective item to 60 for
@@ -465,7 +465,7 @@ public class TimePickerDialogGIg extends DialogFragment
   }
 
   /**
-   * Set the interval for selectable times in the TimePickerDialogGIg
+   * Set the interval for selectable times in the TimePickerDialogGig
    * This is a convenience wrapper around setSelectableTimes
    * The interval for all three time components can be set independently
    * If you are not using the seconds / minutes picker, set the respective item to 60 for
@@ -665,8 +665,9 @@ public class TimePickerDialogGIg extends DialogFragment
             affect the behaviour of the picker (in the unlikely event the user reconfigures
             the picker when it is shown)
              */
-      mDefaultLimiter = mLimiter instanceof DefaultTimePointLimiterGigGig
-          ? (DefaultTimePointLimiterGigGig) mLimiter : new DefaultTimePointLimiterGigGig();
+      mDefaultLimiter =
+          mLimiter instanceof DefaultTimePointLimiterGig ? (DefaultTimePointLimiterGig) mLimiter
+              : new DefaultTimePointLimiterGig();
     }
   }
 
@@ -1573,7 +1574,7 @@ public class TimePickerDialogGIg extends DialogFragment
    * may then be used for the caller to know whether zeros had been explicitly entered as either
    * hours of minutes. This is helpful for deciding whether to show the dashes, or actual 0's.
    * @return A size-3 int array. The first value will be the hours, the second value will be the
-   * minutes, and the third will be either TimePickerDialogGIg.AM or TimePickerDialogGIg.PM.
+   * minutes, and the third will be either TimePickerDialogGig.AM or TimePickerDialogGig.PM.
    */
   @NonNull private int[] getEnteredTime(@NonNull Boolean[] enteredZeros) {
     int amOrPm = -1;
@@ -1914,7 +1915,7 @@ public class TimePickerDialogGIg extends DialogFragment
      * @param minute The minute that was set.
      * @param second The second that was set
      */
-    void onTimeSet(TimePickerDialogGIg view, int hourOfDay, int minute, int second);
+    void onTimeSet(TimePickerDialogGig view, int hourOfDay, int minute, int second);
   }
 
   /**

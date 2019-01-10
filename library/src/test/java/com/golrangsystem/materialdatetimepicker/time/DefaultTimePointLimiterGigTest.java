@@ -3,8 +3,8 @@ package com.golrangsystem.materialdatetimepicker.time;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.golrangsystem.materialdatetimepicker.time.TimePickerDialogGIg.HOUR_INDEX;
-import static com.golrangsystem.materialdatetimepicker.time.TimePickerDialogGIg.MINUTE_INDEX;
+import static com.golrangsystem.materialdatetimepicker.time.TimePickerDialogGig.HOUR_INDEX;
+import static com.golrangsystem.materialdatetimepicker.time.TimePickerDialogGig.MINUTE_INDEX;
 
 /**
  * Unit tests for the default implementation of TimePointLimiterGig
@@ -16,7 +16,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isAmDisabledShouldReturnTrueWhenMinTimeIsInTheAfternoon() {
       TimePointGig minTime = new TimePointGig(13);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -26,7 +26,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isAmDisabledShouldReturnFalseWhenMinTimeIsInTheMorning() {
       TimePointGig minTime = new TimePointGig(8);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -36,7 +36,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isAmDisabledShouldReturnTrueWhenMinTimeIsMidday() {
       TimePointGig minTime = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -46,7 +46,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isAmDisabledShouldReturnFalseWhenMaxTimeIsInTheMorning() {
       TimePointGig maxTime = new TimePointGig(8);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -56,7 +56,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isAmDisabledShouldReturnFalseWhenMaxTimeIsMidday() {
       TimePointGig maxTime = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -66,7 +66,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isPmDisabledShouldReturnTrueWhenMaxTimeIsInTheMorning() {
       TimePointGig maxTime = new TimePointGig(9);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -76,7 +76,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isPmDisabledShouldReturnFalseWhenMinTimeIsInTheAfternoon() {
       TimePointGig minTime = new TimePointGig(13);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -86,7 +86,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isPmDisabledShouldReturnFalseWhenMaxTimeIsMidday() {
       TimePointGig maxTime = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -98,7 +98,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig[] selectableDays = {
           new TimePointGig(13), new TimePointGig(22)
         };
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableDays);
 
@@ -110,7 +110,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig[] selectableDays = {
           new TimePointGig(4), new TimePointGig(13), new TimePointGig(22)
         };
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableDays);
 
@@ -122,7 +122,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig[] selectableDays = {
           new TimePointGig(4), new TimePointGig(9), new TimePointGig(11)
         };
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableDays);
 
@@ -134,7 +134,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig[] selectableDays = {
           new TimePointGig(4), new TimePointGig(22)
         };
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableDays);
 
@@ -146,7 +146,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig[] selectableDays = {
           new TimePointGig(4), new TimePointGig(9), new TimePointGig(12)
         };
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableDays);
 
@@ -155,14 +155,14 @@ public class DefaultTimePointLimiterGigTest {
 
     @Test
     public void isPmDisabledShouldReturnFalseWithoutConstraints() {
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         Assert.assertFalse(limiter.isPmDisabled());
     }
 
     @Test
     public void isAmDisabledShouldReturnFalseWithoutConstraints() {
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         Assert.assertFalse(limiter.isAmDisabled());
     }
@@ -171,7 +171,7 @@ public class DefaultTimePointLimiterGigTest {
     public void setMinTimeShouldThrowExceptionWhenBiggerThanMaxTime() {
       TimePointGig maxTime = new TimePointGig(2);
       TimePointGig minTime = new TimePointGig(3);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -187,7 +187,7 @@ public class DefaultTimePointLimiterGigTest {
     public void setMaxTimeShouldThrowExceptionWhenSmallerThanMinTime() {
       TimePointGig maxTime = new TimePointGig(2);
       TimePointGig minTime = new TimePointGig(3);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -203,7 +203,7 @@ public class DefaultTimePointLimiterGigTest {
     public void isOutOfRangeShouldReturnTrueIfInputSmallerThanMinTime() {
       TimePointGig minTime = new TimePointGig(10);
       TimePointGig input = new TimePointGig(2);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -214,7 +214,7 @@ public class DefaultTimePointLimiterGigTest {
     public void isOutOfRangeShouldReturnTrueIfInputLargerThanMaxTime() {
       TimePointGig maxTime = new TimePointGig(2);
       TimePointGig input = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -226,7 +226,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig minTime = new TimePointGig(1);
       TimePointGig maxTime = new TimePointGig(13);
       TimePointGig input = new TimePointGig(4);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
         limiter.setMaxTime(maxTime);
@@ -237,7 +237,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void isOutOfRangeShouldReturnFalseWithoutRestraints() {
       TimePointGig input = new TimePointGig(14);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         Assert.assertFalse(limiter.isOutOfRange(input));
     }
@@ -248,7 +248,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig[] selectableDays = {
           new TimePointGig(13), new TimePointGig(14)
         };
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableDays);
 
@@ -261,7 +261,7 @@ public class DefaultTimePointLimiterGigTest {
       TimePointGig[] selectableDays = {
           new TimePointGig(4), new TimePointGig(10), new TimePointGig(15)
         };
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableDays);
 
@@ -270,7 +270,7 @@ public class DefaultTimePointLimiterGigTest {
 
     @Test
     public void isOutOfRangeWithIndexShouldHandleNull() {
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
       Assert.assertFalse(limiter.isOutOfRange(null, HOUR_INDEX, TimePointGig.TYPE.SECOND));
     }
@@ -279,7 +279,7 @@ public class DefaultTimePointLimiterGigTest {
     public void isOutOfRangeMinuteShouldReturnFalseWhenMinTimeEqualsToTheMinute() {
       TimePointGig minTime = new TimePointGig(12, 13, 14);
       TimePointGig input = new TimePointGig(12, 13);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -290,7 +290,7 @@ public class DefaultTimePointLimiterGigTest {
     public void isOutOfRangeMinuteShouldReturnFalseWhenMaxTimeEqualsToTheMinute() {
       TimePointGig maxTime = new TimePointGig(12, 13, 14);
       TimePointGig input = new TimePointGig(12, 13);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -303,7 +303,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(12, 13);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -316,7 +316,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(13, 14, 59);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -329,7 +329,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(11, 12, 0);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -342,7 +342,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(11, 11, 0);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -353,7 +353,7 @@ public class DefaultTimePointLimiterGigTest {
     public void isOutOfRangeHourShouldReturnFalseWhenMinTimeEqualsToTheHour() {
       TimePointGig minTime = new TimePointGig(12, 13, 14);
       TimePointGig input = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -364,7 +364,7 @@ public class DefaultTimePointLimiterGigTest {
     public void isOutOfRangeHourShouldReturnFalseWhenMaxTimeEqualsToTheHour() {
       TimePointGig maxTime = new TimePointGig(12, 13, 14);
       TimePointGig input = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -377,7 +377,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -390,7 +390,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(13, 15, 15);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -403,7 +403,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(11);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -416,7 +416,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11), new TimePointGig(12), new TimePointGig(12), new TimePointGig(13)
         };
       TimePointGig input = new TimePointGig(11, 30);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -429,7 +429,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11), new TimePointGig(12), new TimePointGig(13)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
 
@@ -445,7 +445,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12), new TimePointGig(14)
         };
       TimePointGig input = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
         limiter.setSelectableTimes(selectableTimes);
@@ -460,7 +460,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12), new TimePointGig(13), new TimePointGig(14)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
 
@@ -474,7 +474,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12), new TimePointGig(13), new TimePointGig(14)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
 
@@ -488,7 +488,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12), new TimePointGig(13), new TimePointGig(14)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
 
@@ -502,7 +502,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12, 15), new TimePointGig(13, 16), new TimePointGig(14, 17)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
 
@@ -516,7 +516,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12, 15), new TimePointGig(13, 16), new TimePointGig(14, 17)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
 
@@ -532,7 +532,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12), new TimePointGig(14), new TimePointGig(15)
         };
       TimePointGig input = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setDisabledTimes(disabledTimes);
         limiter.setSelectableTimes(selectableTimes);
@@ -547,7 +547,7 @@ public class DefaultTimePointLimiterGigTest {
         };
       TimePointGig input = new TimePointGig(12, 29);
       TimePointGig expected = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -558,7 +558,7 @@ public class DefaultTimePointLimiterGigTest {
     public void roundToNearestShouldReturnMaxTimeIfBiggerThanMaxTime() {
       TimePointGig maxTime = new TimePointGig(8);
       TimePointGig input = new TimePointGig(12);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMaxTime(maxTime);
 
@@ -569,7 +569,7 @@ public class DefaultTimePointLimiterGigTest {
     public void roundToNearestShouldReturnMinTimeIfSmallerThanMinTime() {
       TimePointGig minTime = new TimePointGig(8);
       TimePointGig input = new TimePointGig(7);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setMinTime(minTime);
 
@@ -579,7 +579,7 @@ public class DefaultTimePointLimiterGigTest {
     @Test
     public void roundToNearestShouldReturnInputIfNotOutOfRange() {
       TimePointGig input = new TimePointGig(12, 13, 14);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
       Assert.assertEquals(limiter.roundToNearest(input, null, TimePointGig.TYPE.SECOND), input);
     }
@@ -590,7 +590,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 14), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = new TimePointGig(11);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -605,7 +605,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(15, 16, 17)
         };
       TimePointGig input = new TimePointGig(11, 12, 59);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -624,7 +624,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(13), new TimePointGig(15, 16, 17)
         };
       TimePointGig input = new TimePointGig(12, 59, 59);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -640,7 +640,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(13), new TimePointGig(15, 16, 17)
         };
       TimePointGig input = new TimePointGig(15, 59, 59);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -656,7 +656,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(13), new TimePointGig(15, 16, 17)
         };
       TimePointGig input = new TimePointGig(12, 59, 59);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -670,7 +670,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(11, 12, 16), new TimePointGig(12)
         };
       TimePointGig input = new TimePointGig(11, 12, 14);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
 
@@ -687,7 +687,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12, 13, 14)
         };
       TimePointGig input = new TimePointGig(12, 13, 15);
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
 
         limiter.setSelectableTimes(selectableTimes);
         limiter.setDisabledTimes(disabledTimes);
@@ -702,7 +702,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
       TimePointGig expected = new TimePointGig(11, 12, 14);
 
         limiter.setDisabledTimes(disabledTimes);
@@ -717,7 +717,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(13, 14, 15)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
       TimePointGig expected = new TimePointGig(11, 12, 12);
 
         limiter.setDisabledTimes(disabledTimes);
@@ -732,7 +732,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
       TimePointGig expected = new TimePointGig(11, 12, 15);
 
         limiter.setDisabledTimes(disabledTimes);
@@ -746,7 +746,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
       TimePointGig expected = new TimePointGig(11, 13, 13);
 
         limiter.setDisabledTimes(disabledTimes);
@@ -760,7 +760,7 @@ public class DefaultTimePointLimiterGigTest {
           new TimePointGig(11, 12, 13), new TimePointGig(12, 13, 14), new TimePointGig(13, 14, 15)
         };
       TimePointGig input = disabledTimes[0];
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
       TimePointGig expected = new TimePointGig(10, 12, 13);
 
         limiter.setDisabledTimes(disabledTimes);

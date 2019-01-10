@@ -10,19 +10,19 @@ import java.util.TreeSet;
 /**
  * An implementation of TimePointLimiterGig which implements the most common ways to restrict
  * Timepoints
- * in a TimePickerDialogGIg
+ * in a TimePickerDialogGig
  * Created by wdullaer on 20/06/17.
  */
-class DefaultTimePointLimiterGigGig implements TimePointLimiterGig {
+class DefaultTimePointLimiterGig implements TimePointLimiterGig {
   @SuppressWarnings("WeakerAccess")
-  public static final Parcelable.Creator<DefaultTimePointLimiterGigGig> CREATOR =
-      new Parcelable.Creator<DefaultTimePointLimiterGigGig>() {
-        public DefaultTimePointLimiterGigGig createFromParcel(Parcel in) {
-          return new DefaultTimePointLimiterGigGig(in);
+  public static final Parcelable.Creator<DefaultTimePointLimiterGig> CREATOR =
+      new Parcelable.Creator<DefaultTimePointLimiterGig>() {
+        public DefaultTimePointLimiterGig createFromParcel(Parcel in) {
+          return new DefaultTimePointLimiterGig(in);
     }
 
-        public DefaultTimePointLimiterGigGig[] newArray(int size) {
-          return new DefaultTimePointLimiterGigGig[size];
+        public DefaultTimePointLimiterGig[] newArray(int size) {
+          return new DefaultTimePointLimiterGig[size];
     }
   };
   private TreeSet<TimePointGig> mSelectableTimes = new TreeSet<>();
@@ -31,10 +31,10 @@ class DefaultTimePointLimiterGigGig implements TimePointLimiterGig {
   private TimePointGig mMinTime;
   private TimePointGig mMaxTime;
 
-  DefaultTimePointLimiterGigGig() {
+  DefaultTimePointLimiterGig() {
   }
 
-  @SuppressWarnings("WeakerAccess") public DefaultTimePointLimiterGigGig(Parcel in) {
+  @SuppressWarnings("WeakerAccess") public DefaultTimePointLimiterGig(Parcel in) {
     mMinTime = in.readParcelable(TimePointGig.class.getClassLoader());
     mMaxTime = in.readParcelable(TimePointGig.class.getClassLoader());
     mSelectableTimes.addAll(Arrays.asList(in.createTypedArray(TimePointGig.CREATOR)));
@@ -104,7 +104,7 @@ class DefaultTimePointLimiterGigGig implements TimePointLimiterGig {
       @NonNull TimePointGig.TYPE resolution) {
     if (current == null) return false;
 
-    if (index == TimePickerDialogGIg.HOUR_INDEX) {
+    if (index == TimePickerDialogGig.HOUR_INDEX) {
       if (mMinTime != null && mMinTime.getHour() > current.getHour()) return true;
 
       if (mMaxTime != null && mMaxTime.getHour() + 1 <= current.getHour()) return true;
@@ -124,7 +124,7 @@ class DefaultTimePointLimiterGigGig implements TimePointLimiterGig {
       }
 
       return false;
-    } else if (index == TimePickerDialogGIg.MINUTE_INDEX) {
+    } else if (index == TimePickerDialogGig.MINUTE_INDEX) {
       if (mMinTime != null) {
         TimePointGig roundedMin = new TimePointGig(mMinTime.getHour(), mMinTime.getMinute());
         if (roundedMin.compareTo(current) > 0) return true;

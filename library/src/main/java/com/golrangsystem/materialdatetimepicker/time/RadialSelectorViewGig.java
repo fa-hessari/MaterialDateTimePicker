@@ -83,7 +83,7 @@ public class RadialSelectorViewGig extends View {
    * @param isInnerCircle Whether the initial selection is in the inner or outer circle.
    * Will be ignored when hasInnerCircle is false.
    */
-  public void initialize(Context context, TimePickerControllerGIg controller,
+  public void initialize(Context context, TimePickerControllerGig controller,
       boolean hasInnerCircle,
       boolean disappearsOut, int selectionDegrees, boolean isInnerCircle) {
     if (mIsInitialized) {
@@ -101,7 +101,7 @@ public class RadialSelectorViewGig extends View {
 
     // Calculate values for the circle radius size.
     mIs24HourMode = controller.is24HourMode();
-    if (mIs24HourMode || controller.getVersion() != TimePickerDialogGIg.Version.VERSION_1) {
+    if (mIs24HourMode || controller.getVersion() != TimePickerDialogGig.Version.VERSION_1) {
       mCircleRadiusMultiplier = Float.parseFloat(res.getString(
           com.golrangsystem.materialdatetimepicker.R.string.fh_gig_mdtp_circle_radius_multiplier_24HourMode));
     } else {

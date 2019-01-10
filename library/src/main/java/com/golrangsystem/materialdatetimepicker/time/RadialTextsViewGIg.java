@@ -77,7 +77,7 @@ public class RadialTextsViewGIg extends View {
   }
 
   public void initialize(Context context, String[] texts, String[] innerTexts,
-      TimePickerControllerGIg controller, SelectionValidator validator, boolean disappearsOut) {
+      TimePickerControllerGig controller, SelectionValidator validator, boolean disappearsOut) {
     if (mIsInitialized) {
       Log.e(TAG, "This RadialTextsViewGIg may only be initialized once.");
       return;
@@ -119,7 +119,7 @@ public class RadialTextsViewGIg extends View {
     mHasInnerCircle = (innerTexts != null);
 
     // Calculate the radius for the main circle.
-    if (mIs24HourMode || controller.getVersion() != TimePickerDialogGIg.Version.VERSION_1) {
+    if (mIs24HourMode || controller.getVersion() != TimePickerDialogGig.Version.VERSION_1) {
       mCircleRadiusMultiplier = Float.parseFloat(res.getString(
           com.golrangsystem.materialdatetimepicker.R.string.fh_gig_mdtp_circle_radius_multiplier_24HourMode));
     } else {
@@ -139,7 +139,7 @@ public class RadialTextsViewGIg extends View {
           com.golrangsystem.materialdatetimepicker.R.string.fh_gig_mdtp_numbers_radius_multiplier_inner));
 
       // Version 2 layout draws outer circle bigger than inner
-      if (controller.getVersion() == TimePickerDialogGIg.Version.VERSION_1) {
+      if (controller.getVersion() == TimePickerDialogGig.Version.VERSION_1) {
         mTextSizeMultiplier = Float.parseFloat(res.getString(
             com.golrangsystem.materialdatetimepicker.R.string.fh_gig_mdtp_text_size_multiplier_outer));
         mInnerTextSizeMultiplier = Float.parseFloat(res.getString(

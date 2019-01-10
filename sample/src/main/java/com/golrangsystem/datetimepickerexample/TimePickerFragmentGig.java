@@ -11,14 +11,15 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.golrangsystem.materialdatetimepicker.time.TimePickerDialogGIg;
+import com.golrangsystem.materialdatetimepicker.time.TimePickerDialogGig;
 import com.golrangsystem.materialdatetimepicker.time.TimePointGig;
 import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TimePickerFragmentGig extends Fragment implements TimePickerDialogGIg.OnTimeSetListener {
+public class TimePickerFragmentGig extends Fragment
+    implements TimePickerDialogGig.OnTimeSetListener {
 
     private TextView timeTextView;
     private CheckBox mode24Hours;
@@ -31,7 +32,7 @@ public class TimePickerFragmentGig extends Fragment implements TimePickerDialogG
     private CheckBox limitSelectableTimes;
     private CheckBox disableSpecificTimes;
     private CheckBox showVersion2;
-  private TimePickerDialogGIg tpd;
+  private TimePickerDialogGig tpd;
 
     public TimePickerFragmentGig() {
         // Required empty public constructor
@@ -76,7 +77,7 @@ public class TimePickerFragmentGig extends Fragment implements TimePickerDialogG
             during testing
              */
             if (tpd == null) {
-              tpd = TimePickerDialogGIg.newInstance(
+              tpd = TimePickerDialogGig.newInstance(
                         TimePickerFragmentGig.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
@@ -95,8 +96,8 @@ public class TimePickerFragmentGig extends Fragment implements TimePickerDialogG
             tpd.vibrate(vibrateTime.isChecked());
             tpd.dismissOnPause(dismissTime.isChecked());
             tpd.enableSeconds(enableSeconds.isChecked());
-          tpd.setVersion(showVersion2.isChecked() ? TimePickerDialogGIg.Version.VERSION_2
-              : TimePickerDialogGIg.Version.VERSION_1);
+          tpd.setVersion(showVersion2.isChecked() ? TimePickerDialogGig.Version.VERSION_2
+              : TimePickerDialogGig.Version.VERSION_1);
             if (modeCustomAccentTime.isChecked()) {
                 tpd.setAccentColor(Color.parseColor("#9C27B0"));
             }
@@ -127,13 +128,13 @@ public class TimePickerFragmentGig extends Fragment implements TimePickerDialogG
     @Override
     public void onResume() {
         super.onResume();
-      TimePickerDialogGIg tpd =
-          (TimePickerDialogGIg) requireFragmentManager().findFragmentByTag("Timepickerdialog");
+      TimePickerDialogGig tpd =
+          (TimePickerDialogGig) requireFragmentManager().findFragmentByTag("Timepickerdialog");
         if(tpd != null) tpd.setOnTimeSetListener(this);
     }
 
     @Override
-    public void onTimeSet(TimePickerDialogGIg view, int hourOfDay, int minute, int second) {
+    public void onTimeSet(TimePickerDialogGig view, int hourOfDay, int minute, int second) {
         String hourString = hourOfDay < 10 ? "0"+hourOfDay : ""+hourOfDay;
         String minuteString = minute < 10 ? "0"+minute : ""+minute;
         String secondString = second < 10 ? "0"+second : ""+second;

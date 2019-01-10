@@ -5,7 +5,7 @@ package com.golrangsystem.materialdatetimepicker.time;
  *
  * Created by wdullaer on 6/10/15.
  */
-interface TimePickerControllerGIg {
+interface TimePickerControllerGig {
   /**
    * @return boolean - true if the dark theme should be used
    */
@@ -24,7 +24,7 @@ interface TimePickerControllerGIg {
   /**
    * @return Version - The current version to render
    */
-  TimePickerDialogGIg.Version getVersion();
+  TimePickerDialogGig.Version getVersion();
 
   /**
    * Request the device to vibrate

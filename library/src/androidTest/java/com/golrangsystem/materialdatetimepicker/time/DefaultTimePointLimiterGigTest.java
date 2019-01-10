@@ -9,7 +9,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unit tests for DefaultTimePointLimiterGigGig which need to run on an android device
+ * Unit tests for DefaultTimePointLimiterGig which need to run on an android device
  * Mostly used to test Parcelable serialisation logic
  * Created by wdullaer on 1/11/17.
  */
@@ -18,15 +18,15 @@ import static org.junit.Assert.assertEquals;
     public void shouldCorrectlySaveAndRestoreAParcelWithMinTime() {
       TimePointGig minTime = new TimePointGig(1, 2, 3);
 
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
         limiter.setMinTime(minTime);
 
         Parcel limiterParcel = Parcel.obtain();
         limiter.writeToParcel(limiterParcel, 0);
         limiterParcel.setDataPosition(0);
 
-      DefaultTimePointLimiterGigGig clonedLimiter =
-          DefaultTimePointLimiterGigGig.CREATOR.createFromParcel(limiterParcel);
+      DefaultTimePointLimiterGig clonedLimiter =
+          DefaultTimePointLimiterGig.CREATOR.createFromParcel(limiterParcel);
 
         assertEquals(clonedLimiter.getMinTime(), minTime);
     }
@@ -35,15 +35,15 @@ import static org.junit.Assert.assertEquals;
     public void shouldCorrectlySaveAndRestoreAParcelWithMaxTime() {
       TimePointGig maxTime = new TimePointGig(1, 2, 3);
 
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
         limiter.setMaxTime(maxTime);
 
         Parcel limiterParcel = Parcel.obtain();
         limiter.writeToParcel(limiterParcel, 0);
         limiterParcel.setDataPosition(0);
 
-      DefaultTimePointLimiterGigGig clonedLimiter =
-          DefaultTimePointLimiterGigGig.CREATOR.createFromParcel(limiterParcel);
+      DefaultTimePointLimiterGig clonedLimiter =
+          DefaultTimePointLimiterGig.CREATOR.createFromParcel(limiterParcel);
 
         assertEquals(clonedLimiter.getMaxTime(), maxTime);
     }
@@ -54,15 +54,15 @@ import static org.junit.Assert.assertEquals;
           new TimePointGig(1, 2, 3), new TimePointGig(10, 11, 12)
         };
 
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
         limiter.setDisabledTimes(disabledTimes);
 
         Parcel limiterParcel = Parcel.obtain();
         limiter.writeToParcel(limiterParcel, 0);
         limiterParcel.setDataPosition(0);
 
-      DefaultTimePointLimiterGigGig clonedLimiter =
-          DefaultTimePointLimiterGigGig.CREATOR.createFromParcel(limiterParcel);
+      DefaultTimePointLimiterGig clonedLimiter =
+          DefaultTimePointLimiterGig.CREATOR.createFromParcel(limiterParcel);
 
         assertArrayEquals(clonedLimiter.getDisabledTimes(), disabledTimes);
     }
@@ -73,15 +73,15 @@ import static org.junit.Assert.assertEquals;
           new TimePointGig(1, 2, 3), new TimePointGig(10, 11, 12)
         };
 
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
         limiter.setSelectableTimes(selectableTimes);
 
         Parcel limiterParcel = Parcel.obtain();
         limiter.writeToParcel(limiterParcel, 0);
         limiterParcel.setDataPosition(0);
 
-      DefaultTimePointLimiterGigGig clonedLimiter =
-          DefaultTimePointLimiterGigGig.CREATOR.createFromParcel(limiterParcel);
+      DefaultTimePointLimiterGig clonedLimiter =
+          DefaultTimePointLimiterGig.CREATOR.createFromParcel(limiterParcel);
 
         assertArrayEquals(clonedLimiter.getSelectableTimes(), selectableTimes);
     }
@@ -97,7 +97,7 @@ import static org.junit.Assert.assertEquals;
           new TimePointGig(2, 3, 4), new TimePointGig(10, 11, 12)
         };
 
-      DefaultTimePointLimiterGigGig limiter = new DefaultTimePointLimiterGigGig();
+      DefaultTimePointLimiterGig limiter = new DefaultTimePointLimiterGig();
         limiter.setMinTime(minTime);
         limiter.setMaxTime(maxTime);
         limiter.setDisabledTimes(disabledTimes);
@@ -107,8 +107,8 @@ import static org.junit.Assert.assertEquals;
         limiter.writeToParcel(limiterParcel, 0);
         limiterParcel.setDataPosition(0);
 
-      DefaultTimePointLimiterGigGig clonedLimiter =
-          DefaultTimePointLimiterGigGig.CREATOR.createFromParcel(limiterParcel);
+      DefaultTimePointLimiterGig clonedLimiter =
+          DefaultTimePointLimiterGig.CREATOR.createFromParcel(limiterParcel);
 
         assertEquals(clonedLimiter.getMinTime(), minTime);
         assertEquals(clonedLimiter.getMaxTime(), maxTime);

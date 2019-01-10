@@ -50,15 +50,15 @@ public class RadialPickerLayoutGig extends FrameLayout implements OnTouchListene
   private static final int HOUR_VALUE_TO_DEGREES_STEP_SIZE = VISIBLE_DEGREES_STEP_SIZE;
   private static final int MINUTE_VALUE_TO_DEGREES_STEP_SIZE = 6;
   private static final int SECOND_VALUE_TO_DEGREES_STEP_SIZE = 6;
-  private static final int HOUR_INDEX = TimePickerDialogGIg.HOUR_INDEX;
-  private static final int MINUTE_INDEX = TimePickerDialogGIg.MINUTE_INDEX;
-  private static final int SECOND_INDEX = TimePickerDialogGIg.SECOND_INDEX;
-  private static final int AM = TimePickerDialogGIg.AM;
-  private static final int PM = TimePickerDialogGIg.PM;
+  private static final int HOUR_INDEX = TimePickerDialogGig.HOUR_INDEX;
+  private static final int MINUTE_INDEX = TimePickerDialogGig.MINUTE_INDEX;
+  private static final int SECOND_INDEX = TimePickerDialogGig.SECOND_INDEX;
+  private static final int AM = TimePickerDialogGig.AM;
+  private static final int PM = TimePickerDialogGig.PM;
   private final int TOUCH_SLOP;
   private final int TAP_TIMEOUT;
   private TimePointGig mLastValueSelected;
-  private TimePickerControllerGIg mController;
+  private TimePickerControllerGig mController;
   private OnValueSelectedListener mListener;
   private boolean mTimeInitialized;
   private TimePointGig mCurrentTime;
@@ -179,20 +179,20 @@ public class RadialPickerLayoutGig extends FrameLayout implements OnTouchListene
    * @param is24HourMode Indicates whether we should render in 24hour mode or with AM/PM selectors
    */
   public void initialize(Context context, Locale locale,
-      TimePickerControllerGIg timePickerControllerGIg, TimePointGig initialTime,
+      TimePickerControllerGig timePickerControllerGig, TimePointGig initialTime,
       boolean is24HourMode) {
     if (mTimeInitialized) {
       Log.e(TAG, "Time has already been initialized.");
       return;
     }
 
-    mController = timePickerControllerGIg;
+    mController = timePickerControllerGig;
     mIs24HourMode = mAccessibilityManager.isTouchExplorationEnabled() || is24HourMode;
 
     // Initialize the circle and AM/PM circles if applicable.
     mCircleViewGig.initialize(context, mController);
     mCircleViewGig.invalidate();
-    if (!mIs24HourMode && mController.getVersion() == TimePickerDialogGIg.Version.VERSION_1) {
+    if (!mIs24HourMode && mController.getVersion() == TimePickerDialogGig.Version.VERSION_1) {
       mAmPmCirclesViewGig.initialize(context, locale, mController, initialTime.isAM() ? AM : PM);
       mAmPmCirclesViewGig.invalidate();
     }
@@ -234,7 +234,7 @@ public class RadialPickerLayoutGig extends FrameLayout implements OnTouchListene
     }
     // The version 2 layout has the hours > 12 on the inner circle rather than the outer circle
     // Inner circle and outer circle should be swapped (see #411)
-    if (mController.getVersion() == TimePickerDialogGIg.Version.VERSION_2) {
+    if (mController.getVersion() == TimePickerDialogGig.Version.VERSION_2) {
       String[] temp = hoursTexts;
       hoursTexts = innerHoursTexts;
       innerHoursTexts = temp;
@@ -288,7 +288,7 @@ public class RadialPickerLayoutGig extends FrameLayout implements OnTouchListene
     // We'll have the 00 hours on the outside circle.
     boolean isMorning = hourOfDay <= 12 && hourOfDay != 0;
     // In the version 2 layout the circles are swapped
-    if (mController.getVersion() != TimePickerDialogGIg.Version.VERSION_1) isMorning = !isMorning;
+    if (mController.getVersion() != TimePickerDialogGig.Version.VERSION_1) isMorning = !isMorning;
     return mIs24HourMode && isMorning;
   }
 
@@ -568,7 +568,7 @@ public class RadialPickerLayoutGig extends FrameLayout implements OnTouchListene
     }
 
     if (currentShowing == HOUR_INDEX
-        && mController.getVersion() != TimePickerDialogGIg.Version.VERSION_1
+        && mController.getVersion() != TimePickerDialogGig.Version.VERSION_1
         && mIs24HourMode) {
       value = (value + 12) % 24;
     }
@@ -734,7 +734,7 @@ public class RadialPickerLayoutGig extends FrameLayout implements OnTouchListene
         mDoingMove = false;
         mDoingTouch = true;
         // If we're showing the AM/PM, check to see if the user is touching it.
-        if (!mIs24HourMode && mController.getVersion() == TimePickerDialogGIg.Version.VERSION_1) {
+        if (!mIs24HourMode && mController.getVersion() == TimePickerDialogGig.Version.VERSION_1) {
           mIsTouchingAmOrPm = mAmPmCirclesViewGig.getIsTouchingAmOrPm(eventX, eventY);
         } else {
           mIsTouchingAmOrPm = -1;
