@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.wdullaer.materialdatetimepicker;
 
 import android.content.Context;
@@ -27,20 +26,17 @@ import android.widget.TextView;
  * Fake Button class, used so TextViews can announce themselves as Buttons, for accessibility.
  */
 public class AccessibleTextView extends TextView {
+  public AccessibleTextView(Context context, AttributeSet attrs) {
+    super(context, attrs);
+  }
 
-    public AccessibleTextView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
+  @Override public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
+    super.onInitializeAccessibilityEvent(event);
+    event.setClassName(Button.class.getName());
+  }
 
-    @Override
-    public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        super.onInitializeAccessibilityEvent(event);
-        event.setClassName(Button.class.getName());
-    }
-
-    @Override
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        super.onInitializeAccessibilityNodeInfo(info);
-        info.setClassName(Button.class.getName());
-    }
+  @Override public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
+    super.onInitializeAccessibilityNodeInfo(info);
+    info.setClassName(Button.class.getName());
+  }
 }

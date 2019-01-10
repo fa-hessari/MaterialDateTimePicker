@@ -14,20 +14,19 @@
      See the License for the specific language governing permissions and
      limitations under the License.
  -->
-
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
+<resources
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mdtp_done_label" msgid="7007948707597430919">"Kwenziwe"</string>
-    <string name="mdtp_hour_picker_description" msgid="7586639618712934060">"Amahora weslayidi esiyindingilizi"</string>
-    <string name="mdtp_minute_picker_description" msgid="6024811202872705251">"Amaminithi weslayidi esiyindingilizi"</string>
-    <string name="mdtp_select_hours" msgid="7651068754188418859">"Khetha amahora"</string>
-    <string name="mdtp_select_minutes" msgid="8327182090226828481">"Khetha amaminithi"</string>
-    <string name="mdtp_day_picker_description" msgid="3968620852217927702">"Igridi yenyanga yezinsuku"</string>
-    <string name="mdtp_year_picker_description" msgid="6963340404644587098">"Uhlu lonyaka"</string>
-    <string name="mdtp_select_day" msgid="3973338219107019769">"Khetha inyanga nosuku"</string>
-    <string name="mdtp_select_year" msgid="2603330600102539372">"Khetha unyaka"</string>
-    <string name="mdtp_item_is_selected" msgid="2674929164900463786">"I-<xliff:g id="ITEM">%1$s</xliff:g> ekhethiwe"</string>
-    <string name="mdtp_deleted_key" msgid="6908431551612331381">"I-<xliff:g id="KEY">%1$s</xliff:g> isusiwe"</string>
-    <string name="mdtp_date_v1_monthyear">MMMM yyyy</string>
-    <string name="mdtp_date_v2_daymonthyear">EEE, MMM dd</string>
+  <string msgid="7007948707597430919" name="fh_gig_mdtp_done_label">"Kwenziwe"</string>
+  <string msgid="7586639618712934060" name="fh_gig_mdtp_hour_picker_description">"Amahora weslayidi esiyindingilizi"</string>
+  <string msgid="6024811202872705251" name="fh_gig_mdtp_minute_picker_description">"Amaminithi weslayidi esiyindingilizi"</string>
+  <string msgid="7651068754188418859" name="fh_gig_mdtp_select_hours">"Khetha amahora"</string>
+  <string msgid="8327182090226828481" name="fh_gig_mdtp_select_minutes">"Khetha amaminithi"</string>
+  <string msgid="3968620852217927702" name="fh_gig_mdtp_day_picker_description">"Igridi yenyanga yezinsuku"</string>
+  <string msgid="6963340404644587098" name="fh_gig_mdtp_year_picker_description">"Uhlu lonyaka"</string>
+  <string msgid="3973338219107019769" name="fh_gig_mdtp_select_day">"Khetha inyanga nosuku"</string>
+  <string msgid="2603330600102539372" name="fh_gig_mdtp_select_year">"Khetha unyaka"</string>
+  <string msgid="2674929164900463786" name="fh_gig_mdtp_item_is_selected">"I-<xliff:g id="ITEM">%1$s</xliff:g> ekhethiwe"</string>
+  <string msgid="6908431551612331381" name="fh_gig_mdtp_deleted_key">"I-<xliff:g id="KEY">%1$s</xliff:g> isusiwe"</string>
+  <string name="fh_gig_mdtp_date_v1_monthyear">MMMM yyyy</string>
+  <string name="fh_gig_mdtp_date_v2_daymonthyear">EEE, MMM dd</string>
 </resources>

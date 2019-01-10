@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.wdullaer.materialdatetimepicker.date;
 
 import java.util.Calendar;
@@ -24,43 +23,42 @@ import java.util.TimeZone;
  * Controller class to communicate among the various components of the date picker dialog.
  */
 public interface DatePickerController {
+  void onYearSelected(int year);
 
-    void onYearSelected(int year);
+  void onDayOfMonthSelected(int year, int month, int day);
 
-    void onDayOfMonthSelected(int year, int month, int day);
+  void registerOnDateChangedListener(DatePickerDialog.OnDateChangedListener listener);
 
-    void registerOnDateChangedListener(DatePickerDialog.OnDateChangedListener listener);
+  @SuppressWarnings("unused") void unregisterOnDateChangedListener(
+      DatePickerDialog.OnDateChangedListener listener);
 
-    @SuppressWarnings("unused")
-    void unregisterOnDateChangedListener(DatePickerDialog.OnDateChangedListener listener);
+  MonthAdapter.CalendarDay getSelectedDay();
 
-    MonthAdapter.CalendarDay getSelectedDay();
+  boolean isThemeDark();
 
-    boolean isThemeDark();
+  int getAccentColor();
 
-    int getAccentColor();
-    
-    boolean isHighlighted(int year, int month, int day);
+  boolean isHighlighted(int year, int month, int day);
 
-    int getFirstDayOfWeek();
+  int getFirstDayOfWeek();
 
-    int getMinYear();
+  int getMinYear();
 
-    int getMaxYear();
+  int getMaxYear();
 
-    Calendar getStartDate();
+  Calendar getStartDate();
 
-    Calendar getEndDate();
+  Calendar getEndDate();
 
-    boolean isOutOfRange(int year, int month, int day);
+  boolean isOutOfRange(int year, int month, int day);
 
-    void tryVibrate();
+  void tryVibrate();
 
-    TimeZone getTimeZone();
+  TimeZone getTimeZone();
 
-    Locale getLocale();
+  Locale getLocale();
 
-    DatePickerDialog.Version getVersion();
+  DatePickerDialog.Version getVersion();
 
-    DatePickerDialog.ScrollOrientation getScrollOrientation();
+  DatePickerDialog.ScrollOrientation getScrollOrientation();
 }

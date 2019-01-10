@@ -115,10 +115,10 @@ You can set the layout version using the factory
 dpd.setVersion(DatePickerDialog.Version.VERSION_2);
 ```
 
-The pickers will be themed automatically based on the current theme where they are created, based on the current `colorAccent`. You can also theme the dialogs via the `setAccentColor(int color)` method. Alternatively, you can theme the pickers by overwriting the color resources `mdtp_accent_color` and `mdtp_accent_color_dark` in your project.
+The pickers will be themed automatically based on the current theme where they are created, based on the current `colorAccent`. You can also theme the dialogs via the `setAccentColor(int color)` method. Alternatively, you can theme the pickers by overwriting the color resources `fh_gig_mdtp_accent_color` and `fh_gig_mdtp_accent_color_dark` in your project.
 ```xml
-<color name="mdtp_accent_color">#009688</color>
-<color name="mdtp_accent_color_dark">#00796b</color>
+<color name="fh_gig_mdtp_accent_color">#009688</color>
+<color name="fh_gig_mdtp_accent_color_dark">#00796b</color>
 ```
 
 The exact order in which colors are selected is as follows:
@@ -126,11 +126,11 @@ The exact order in which colors are selected is as follows:
 1. `setAccentColor(int color)` in java code
 2. `android.R.attr.colorAccent` (if android 5.0+)
 3. `R.attr.colorAccent` (eg. when using AppCompat)
-4. `R.color.mdtp_accent_color` and `R.color.mdtp_accent_color_dark` if none of the others are set in your project
+4. `R.color.fh_gig_mdtp_accent_color` and `R.color.fh_gig_mdtp_accent_color_dark` if none of the others are set in your project
 
-The pickers also have a dark theme. This can be specified globablly using the `mdtp_theme_dark` attribute in your theme or the `setThemeDark(boolean themeDark)` functions. The function calls overwrite the XML setting.
+The pickers also have a dark theme. This can be specified globablly using the `fh_gig_mdtp_theme_dark` attribute in your theme or the `setThemeDark(boolean themeDark)` functions. The function calls overwrite the XML setting.
 ```xml
-<item name="mdtp_theme_dark">true</item>
+<item name="fh_gig_mdtp_theme_dark">true</item>
 ```
 
 
@@ -188,7 +188,7 @@ You can pass a `Calendar[]` to the `DatePickerDialog`. The values in this list a
 The values in this `Calendar[]` are explicitly disabled (not selectable). This option can be used together with `setSelectableDays(Calendar[] days)`: in case there is a clash `setDisabledDays(Calendar[] days)` will take precedence over `setSelectableDays(Calendar[] days)`
 
 ### [DatePickerDialog] `setHighlightedDays(Calendar[] days)`  
-You can pass a `Calendar[]` of days to highlight. They will be rendered in bold. You can tweak the color of the highlighted days by overwriting `mdtp_date_picker_text_highlighted`
+You can pass a `Calendar[]` of days to highlight. They will be rendered in bold. You can tweak the color of the highlighted days by overwriting `fh_gig_mdtp_date_picker_text_highlighted`
 
 ### [DatePickerDialog] `showYearPickerFirst(boolean yearPicker)`  
 Show the year picker first, rather than the month and day picker.

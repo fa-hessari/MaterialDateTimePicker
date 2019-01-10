@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.wdullaer.materialdatetimepicker.date;
 
 import android.content.Context;
@@ -22,13 +21,11 @@ import android.content.Context;
  * An adapter for a list of {@link SimpleMonthView} items.
  */
 public class SimpleMonthAdapter extends MonthAdapter {
+  public SimpleMonthAdapter(DatePickerController controller) {
+    super(controller);
+  }
 
-    public SimpleMonthAdapter(DatePickerController controller) {
-        super(controller);
-    }
-
-    @Override
-    public MonthView createMonthView(Context context) {
-        return new SimpleMonthView(context, null, mController);
-    }
+  @Override public MonthView createMonthView(Context context) {
+    return new SimpleMonthView(context, null, mController);
+  }
 }

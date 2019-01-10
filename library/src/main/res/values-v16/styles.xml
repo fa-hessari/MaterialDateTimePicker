@@ -13,18 +13,17 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Style for dialog labels. -->
-    <style name="mdtp_time_label_thin">
-        <item name="android:fontFamily">sans-serif-light</item>
-    </style>
+  <!-- Style for dialog labels. -->
+  <style name="fh_gig_mdtp_time_label_thin">
+    <item name="android:fontFamily">sans-serif-light</item>
+  </style>
 
-    <style name="mdtp_done_button_light">
-        <item name="android:fontFamily">sans-serif-light</item>
-    </style>
+  <style name="fh_gig_mdtp_done_button_light">
+    <item name="android:fontFamily">sans-serif-light</item>
+  </style>
 
-    <style name="mdtp_day_of_week_label_condensed">
-        <item name="android:fontFamily">sans-serif-condensed</item>
-    </style>
+  <style name="fh_gig_mdtp_day_of_week_label_condensed">
+    <item name="android:fontFamily">sans-serif-condensed</item>
+  </style>
 </resources>

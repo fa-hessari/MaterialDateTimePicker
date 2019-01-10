@@ -14,20 +14,19 @@
      See the License for the specific language governing permissions and
      limitations under the License.
  -->
-
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
+<resources
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="mdtp_done_label" msgid="7007948707597430919">"Kész"</string>
-    <string name="mdtp_hour_picker_description" msgid="7586639618712934060">"óra kör alakú csúszkája"</string>
-    <string name="mdtp_minute_picker_description" msgid="6024811202872705251">"perc kör alakú csúszkája"</string>
-    <string name="mdtp_select_hours" msgid="7651068754188418859">"Óra kiválasztása"</string>
-    <string name="mdtp_select_minutes" msgid="8327182090226828481">"Perc kiválasztása"</string>
-    <string name="mdtp_day_picker_description" msgid="3968620852217927702">"Napok havi leosztásban"</string>
-    <string name="mdtp_year_picker_description" msgid="6963340404644587098">"Évek listája"</string>
-    <string name="mdtp_select_day" msgid="3973338219107019769">"Válassza ki a hónapot és a napot"</string>
-    <string name="mdtp_select_year" msgid="2603330600102539372">"Válassza ki az évet"</string>
-    <string name="mdtp_item_is_selected" msgid="2674929164900463786">"<xliff:g id="ITEM">%1$s</xliff:g> kiválasztva"</string>
-    <string name="mdtp_deleted_key" msgid="6908431551612331381">"A(z) <xliff:g id="KEY">%1$s</xliff:g> érték törölve"</string>
-    <string name="mdtp_date_v1_monthyear">yyyy. MMMM</string>
-    <string name="mdtp_date_v2_daymonthyear">MMM dd., EEE</string>
+  <string msgid="7007948707597430919" name="fh_gig_mdtp_done_label">"Kész"</string>
+  <string msgid="7586639618712934060" name="fh_gig_mdtp_hour_picker_description">"óra kör alakú csúszkája"</string>
+  <string msgid="6024811202872705251" name="fh_gig_mdtp_minute_picker_description">"perc kör alakú csúszkája"</string>
+  <string msgid="7651068754188418859" name="fh_gig_mdtp_select_hours">"Óra kiválasztása"</string>
+  <string msgid="8327182090226828481" name="fh_gig_mdtp_select_minutes">"Perc kiválasztása"</string>
+  <string msgid="3968620852217927702" name="fh_gig_mdtp_day_picker_description">"Napok havi leosztásban"</string>
+  <string msgid="6963340404644587098" name="fh_gig_mdtp_year_picker_description">"Évek listája"</string>
+  <string msgid="3973338219107019769" name="fh_gig_mdtp_select_day">"Válassza ki a hónapot és a napot"</string>
+  <string msgid="2603330600102539372" name="fh_gig_mdtp_select_year">"Válassza ki az évet"</string>
+  <string msgid="2674929164900463786" name="fh_gig_mdtp_item_is_selected">"<xliff:g id="ITEM">%1$s</xliff:g> kiválasztva"</string>
+  <string msgid="6908431551612331381" name="fh_gig_mdtp_deleted_key">"A(z) <xliff:g id="KEY">%1$s</xliff:g> érték törölve"</string>
+  <string name="fh_gig_mdtp_date_v1_monthyear">yyyy. MMMM</string>
+  <string name="fh_gig_mdtp_date_v2_daymonthyear">MMM dd., EEE</string>
 </resources>
